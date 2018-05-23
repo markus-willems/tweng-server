@@ -1,0 +1,37 @@
+{
+    "name": "tweng-server",
+    "version": "0.0.1",
+    "main": "dist/server.js",
+    "author": "Markus Willems",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "clean": "rimraf dist/",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "dev": "NODE_ENV=dev nodemon src/server.js --exec 'node --require 'dotenv/config' --require 'babel-register''",
+        "build": "yarn run clean && babel src --out-dir dist",
+        "start": "yarn run build && NODE_ENV=prod node dist/server.js"
+    },
+    "dependencies": {
+        "array-shuffle": "^1.0.1",
+        "body-parser": "^1.18.2",
+        "cors": "^2.8.4",
+        "dotenv": "^5.0.1",
+        "express": "^4.16.3",
+        "helmet": "^3.12.0",
+        "morgan": "^1.9.0",
+        "pg": "^7.4.3",
+        "pusher": "^1.5.1",
+        "uuid": "^3.2.1"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-register": "^6.26.0",
+        "jest": "^22.4.3",
+        "nodemon": "^1.17.4",
+        "rimraf": "^2.6.2",
+        "supertest": "^3.0.0"
+    }
+}
