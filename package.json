@@ -9,9 +9,10 @@
         "clean": "rimraf dist/",
         "test": "jest",
         "test:watch": "jest --watch",
-        "dev": "NODE_ENV=dev nodemon src/server.js --exec 'node --require 'dotenv/config' --require 'babel-register''",
-        "build": "yarn run clean && babel src --out-dir dist",
-        "start": "yarn run build && NODE_ENV=prod node dist/server.js"
+        "dev":
+            "NODE_ENV=dev nodemon src/server.js --exec 'node --require 'dotenv/config' --require 'babel-register''",
+        "build": "npm run clean && babel src --out-dir dist",
+        "start": "npm run build && NODE_ENV=prod node dist/server.js"
     },
     "dependencies": {
         "array-shuffle": "^1.0.1",
